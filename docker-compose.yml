@@ -4,7 +4,14 @@ services:
   app:
     build: .
     ports:
-      - "3000:3000"
-    volumes:
-      - .:/app
-    restart: unless-stopped
+      - "4000:4000"  # Map host port 4000 to container port 4000
+    environment:
+      NODE_ENV: production
+      MONGO_URL: mongodb://mongodb:27017/mydatabase  # Use 'mongodb' as the hostname
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"  # Expose MongoDB port

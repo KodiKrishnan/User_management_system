@@ -1,4 +1,4 @@
-pipeline {
+\pipeline {
     agent any
 
     environment {
@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from the repository
-                git 'https://github.com/KodiKrishnan/User_management_system.git' 
+                git 'https://github.com/KodiKrishnan/User_management_system.git' // Replace with your repo URL
             }
         }
 
@@ -42,7 +42,8 @@ pipeline {
     post {
         always {
             // Clean up the workspace
-            //cleanWs() changes done 
+            cleanWs()
+            echo "Workspace cleaned up."
         }
         success {
             echo "Build succeeded! The application is now deployed."

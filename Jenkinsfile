@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     // Print the current working directory
-                    sh 'pwd23'
+                    sh 'pwd ket' 
                     sh 'ls -la'
                 }
             }

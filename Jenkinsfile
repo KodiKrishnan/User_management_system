@@ -14,10 +14,19 @@ pipeline {
             }
         }
 
+        stage('Print Working Directory') {
+            steps {
+                script {
+                    // Print the current working directory
+                    sh 'pwd'
+                }
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Build the Docker image using docker-compose
+                    // Navigate to the directory containing docker-compose.yml and build the image
                     echo "Building Docker image using docker-compose"
                     sh 'docker-compose build'
                 }

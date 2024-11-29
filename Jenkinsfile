@@ -10,7 +10,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from the repository
-                git branch: 'kodii', url: 'https://github.com/isjadmin/jobportal.git'
+                git 'https://github.com/KodiKrishnan/User_management_system.git' // Replace with your repo URL
+
             }
         }
 

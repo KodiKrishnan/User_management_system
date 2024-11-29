@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from the repository
-                git branch: 'kodii', url: 'https://github.com/KodiKrishnan/User_management_system.git' // Replace with your repo URL
+                git branch: 'kodii', url: 'https://github.com/KodiKrishnan/User_management_system.git' 
             }
         }
 
@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     // Print the current working directory
-                    sh 'pwd'
+                    sh 'pwd23'
                     sh 'ls -la'
                 }
             }
@@ -52,7 +52,7 @@ pipeline {
     post {
         always {
             // Clean up the workspace
-            //cleanWs()
+            cleanWs()
             echo "Workspace cleaned up."
         }
         success {
@@ -60,6 +60,14 @@ pipeline {
         }
         failure {
             echo "Build failed! Please check the logs for details."
+            // Send email notification only when the build fails
+            emailext (
+                subject: "Deployment Failed - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "The deployment of ${env.JOB_NAME} Build Number-#${env.BUILD_NUMBER} failed.",
+                to: "kodi.m@infosoftjoin.in",
+                attachLog: true
+            )
         }
+        
     }
 }

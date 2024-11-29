@@ -14,16 +14,6 @@ pipeline {
             }
         }
 
-        stage('Print Working Directory') {
-            steps {
-                script {
-                    // Print the current working directory
-                    sh 'pds' 
-                    sh 'ls -la'
-                }
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 script {

@@ -17,6 +17,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
+                    sh 'pwd'
                     // Build the Docker image using docker-compose
                     echo "Building Docker image using docker-compose"
                     sh 'docker-compose build'

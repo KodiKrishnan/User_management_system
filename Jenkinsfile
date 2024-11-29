@@ -11,7 +11,6 @@ pipeline {
             steps {
                 // Checkout the code from the repository
                 git 'https://github.com/KodiKrishnan/User_management_system.git' // Replace with your repo URL
-
             }
         }
 

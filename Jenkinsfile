@@ -42,7 +42,7 @@ pipeline {
     post {
         always {
             // Clean up the workspace
-            //cleanWs()
+            //cleanWs() changes done 
         }
         success {
             echo "Build succeeded! The application is now deployed."

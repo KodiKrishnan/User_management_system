@@ -19,7 +19,7 @@ pipeline {
                 script {
                     // Build the Docker image using docker-compose
                     echo "Building Docker image using docker-compose"
-                    sh 'docker-compose.yml build'
+                    sh 'docker-compose build'
                 }
             }
         }

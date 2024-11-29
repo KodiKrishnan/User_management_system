@@ -19,6 +19,7 @@ pipeline {
                 script {
                     // Print the current working directory
                     sh 'pwd'
+                    sh 'ls -la'
                 }
             }
         }
